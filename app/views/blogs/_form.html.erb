@@ -1,0 +1,10 @@
+
+<div class="container">
+    <%= form_with model: @blog, local: true do |b| %>
+    <%= b.text_field :title, class: "form-control", placeholder: 'Enter Title' %>
+    <br>
+    <%= b.text_area :content, class: "form-control", placeholder: 'Enter Content' %>
+    <br>
+    <%= b.submit %>
+    <% end %>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+<div class="row">
+
+<% @Blogs.each do |b| %>
+<div class="col-md-4" id="card_margin">
+<div class="card" style= "width: 18rem">
+    <div class="card-body">
+        <h5 class="card-title">
+        <%= b.title %>
+        </h5>
+        <p class="card-text">
+        <%= b.content.truncate(100, seperator: ' ')%>
+        </p>
+        <%= link_to "View", blog_path(b), class: 'btn btn-outline-info' %>
+        <%= link_to  "Edit", edit_blog_path(b), class: 'btn btn-outline-secondary' %>
+        <%= link_to  "Delete", blog_path(b), class: 'btn btn-outline-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+    </div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
